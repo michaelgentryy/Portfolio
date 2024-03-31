@@ -1,3 +1,12 @@
-<style>
+html {
 
-</style>
+}
+
+body {
+
+}
+
+.carousel-container {
+    min-height: 93vh;
+    background-color: #171717;
+}
