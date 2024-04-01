@@ -3,10 +3,19 @@ html {
 }
 
 body {
-
+    
 }
 
-.carousel-container {
-    min-height: 93vh;
+.imageContainer {
+    min-height: 94vh;
+    min-width: 93vw;
     background-color: #171717;
+}
+
+#image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-top: 25px;
 }
