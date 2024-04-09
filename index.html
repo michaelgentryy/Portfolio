@@ -60,7 +60,7 @@
         <br>
 
         <div class="w3-third">
-            <div class="w3-card w3-container" style="min-height:650px">
+            <div class="w3-card w3-container w3-display-container" style="min-height:650px">
 
                 <h4 class="">Deadwood Dominance</h4>
 
@@ -73,15 +73,16 @@
                 <p>UI / UX</p>
                 <p>Team Collaboration</p>
 
-                <br><br><br><br><br>
-                <a href="">
-                    <button type="button" class="w3-button w3-white w3-border">More Info</button>
-                </a>
+                <div class="w3-display-bottommiddle w3-margin-bottom">
+                    <a href="">
+                        <button type="button" class="w3-button w3-white w3-border">More Info</button>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div class="w3-third">
-            <div class="w3-card w3-container" style="min-height:650px">
+        <div class="w3-third w3-display-container">
+            <div class="w3-card w3-container w3-display-container" style="min-height:650px">
 
                 <h4 class="">Casty Magic Guy</h4>
 
@@ -94,13 +95,15 @@
                 <p>UI / UX</p>
                 <p>Level Design</p>
 
-                <br><br><br><br><br>
-
-                <button type="button" class="w3-button w3-white w3-border">More Info</button>
+                <div class="w3-display-bottommiddle w3-margin">
+                    <a href="">
+                        <button type="button" class="w3-button w3-white w3-border">More Info</button>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div class="w3-third">
+        <div class="w3-third w3-display-container">
             <div class="w3-card w3-container" style="min-height: 650px">
 
                 <h4 class="">Coming Soon</h4>
@@ -116,9 +119,11 @@
                 <p>Creative Writing</p>
                 <p>Team Collaboration</p>
 
-                <br><br>
-
-                <button type="button" class="w3-button w3-white w3-border">More Info</button>
+                <div class="w3-display-bottommiddle w3-margin-bottom">
+                    <a href="">
+                        <button type="button" class="w3-button w3-white w3-border">More Info</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -128,8 +133,8 @@
     </div>
 
     <div class="w3-row-padding">
-        <div class="w3-third">
-            <div class="w3-card w3-padding" style="min-height: 550px">
+        <div class="w3-third w3-display-container">
+            <div class="w3-card w3-padding" style="min-height: 650px">
 
                 <h2 class="w3-center w3-border-bottom">About Me</h2>
 
@@ -139,7 +144,7 @@
 
                 <p>If for any reason you need a copy of my resume, you can download it below. Bare with me as it grows, or better yet, help me grow.</p>
 
-                <div class="w3-center">
+                <div class="w3-center w3-display-bottommiddle w3-margin-bottom">
                     <a href="GentryMichaelR%C3%A9sum%C3%A9.pdf" download>
                         <button type="button" class="w3-button w3-border">Resume</button>
                     </a>
@@ -148,7 +153,7 @@
         </div>
 
         <div class="w3-twothird">
-            <div class="w3-card w3-padding" style="min-height: 550px">
+            <div class="w3-card w3-padding" style="min-height: 650px">
 
                 <h2 class="w3-center w3-border-bottom">Career Timeline</h2>
 
@@ -187,12 +192,19 @@
                     <a href="https://www.linkedin.com/in/michael-gentry-2a0ab1220/" target="_blank">
                         <i class="fa fa-linkedin w3-button w3-border w3-large"></i>
                     </a>
+
+                    <a href="javascript:void(0);" onclick="openEmailPopup()">
+                        <i class="fa fa-envelope w3-button w3-border w3-large"></i>
+                    </a>
                 </div>
 
             </footer>
         </div>
 
         <script>
+            function openEmailPopup() {
+                window.open('mailto:mtgentryy@gmail.com', 'EmailPopup', 'width=600,height=400');
+            }
 
         </script>
 
