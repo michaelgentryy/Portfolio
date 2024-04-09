@@ -11,10 +11,10 @@
 </head>
 
 <body>
+    <!-- Nav Bar | Hide When Screen Size Small -->
+    <div class="w3-bar w3-black w3-wide w3-hide-small">
 
-    <div class="w3-bar w3-black">
-
-        <a class="w3-bar-item w3-left w3-large w3-animate-top w3-wide">Portfolio</a>
+        <a class="w3-bar-item w3-left w3-large w3-animate-top">Portfolio</a>
 
         <a class="w3-bar-item w3-button w3-right w3-large w3-animate-top">Contact</a>
 
@@ -22,6 +22,11 @@
 
         <a class="w3-bar-item w3-button w3-right w3-large w3-animate-top">Projects</a>
 
+    </div>
+
+    <!-- Hamburger Icon | Hide When Screen Med / Big -->
+    <div id="hamNavBar" class="w3-bar w3-black w3-hide-large w3-hide-medium">
+        <a href="javascript:void(0)" class="w3-bar-item w3-large w3-button" onclick="toggleNavbar()">☰</a>
     </div>
 
     <!-- Header -->
@@ -56,7 +61,8 @@
 
         <div class="w3-third">
             <div class="w3-card w3-container" style="min-height:650px">
-                <h4>Deadwood Dominance</h4>
+
+                <h4 class="">Deadwood Dominance</h4>
 
                 <br>
 
@@ -76,7 +82,8 @@
 
         <div class="w3-third">
             <div class="w3-card w3-container" style="min-height:650px">
-                <h4>Casty Magic Guy</h4>
+
+                <h4 class="">Casty Magic Guy</h4>
 
                 <br>
 
@@ -95,7 +102,8 @@
 
         <div class="w3-third">
             <div class="w3-card w3-container" style="min-height: 650px">
-                <h4>Coming Soon</h4>
+
+                <h4 class="">Coming Soon</h4>
 
                 <br>
 
@@ -120,33 +128,65 @@
     </div>
 
     <div class="w3-row-padding">
-        <div class="w3-half">
-            <div class="w3-card w3-padding aboutMe" style="">
+        <div class="w3-third">
+            <div class="w3-card w3-padding" style="min-height: 500px">
 
-                <h1 class="w3-center">About Me</h1>
+                <h2 class="w3-center">About Me</h2>
 
                 <p>Hello! As you can tell by the big text at the top, my name is Michael Gentry and I am a Technical Game Designer. I graduated from Full Sail University with my Bachelor's Degree in Game Design and even received an award, the Advanced Achiever award. I've become so incredibly invested in the lifecycle of game development that I've begun to branch out and become familiar with other aspects such as 3D modeling and animation.</p>
 
             </div>
         </div>
 
-        <div class="w3-half">
-            <div class="w3-card w3-padding" style="">
-                <h1 class="w3-center">TimeLine</h1>
+        <div class="w3-twothird">
+            <div class="w3-card w3-padding" style="min-height: 500px">
+
+                <h2 class="w3-center w3-border">Career Timeline</h2>
+
+                <div class="w3-container">
+                    <div class="w3-half w3-padding w3-card" style="">
+                        <h4 class="w3-center w3-border-bottom">Full Sail University</h4>
+                        <p class="w3-center" style="font-size: 10px">Jun 2021 - Nov 2023</p>
+
+                        <p>Game Design B.S.</p>
+                        <p>Advanced Achiever Award</p>
+                    </div>
+                </div>
+
+                <div class="w3-container">
+                    <div class="w3-half w3-padding w3-card w3-right">
+                        <h4 class="w3-center w3-border-bottom">Game Group (Internship)</h4>
+                        <p class="w3-center" style="font-size: 10px">Dec 2023 - Present</p>
+
+                        <p>Game Mechanics</p>
+                        <p>Level Design</p>
+                        <p>Creative Writing</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer
-    <footer class="w3-theme-dark w3-center w3-padding-16">
-        <div class="w3-container" style="max-width: 1000px; margin: auto">
-            <h3 class="w3-center">Get Connected</h3>
-            <a href="https://www.linkedin.com/in/michael-gentry-2a0ab1220/" target="_blank">
-                <i class="fa fa-linkedin w3-button w3-border w3-large"></i>
-            </a>
+        <div class="w3-container">
+            <hr>
         </div>
 
-    </footer> -->
+        <div class="footer">
+            <!-- Footer -->
+            <footer class="w3-theme-dark w3-center w3-padding-16">
+                <div class="w3-container" style="max-width: 1000px; margin: auto">
+                    <h3 class="w3-center">Get Connected</h3>
+                    <a href="https://www.linkedin.com/in/michael-gentry-2a0ab1220/" target="_blank">
+                        <i class="fa fa-linkedin w3-button w3-border w3-large"></i>
+                    </a>
+                </div>
+
+            </footer>
+        </div>
+
+        <script>
+
+        </script>
+
 </body>
 
 </html>
