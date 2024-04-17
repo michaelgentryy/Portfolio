@@ -1,11 +1,13 @@
 <!DOCTYPE HTML>
 
-<html style="height: 100vh; width: 100vw">
+<html lang="en">
 
 <head>
     <title>Deadwood Dominance</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="video.css">
+    <link rel="stylesheet" href="carousel.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -15,9 +17,9 @@
 
     <!-- Nav Bar | Hide When Screen Size Small -->
     <div class="w3-bar w3-black w3-wide w3-hide-small">
-        <a class="w3-bar-item w3-left w3-large w3-animate-top">Portfolio</a>
+        <a class="w3-bar-item w3-left w3-large">Portfolio</a>
 
-        <a class="w3-bar-item w3-button w3-right w3-large w3-animate-top">Home</a>
+        <a class="w3-bar-item w3-button w3-right w3-large" href="index.html">Home</a>
     </div>
 
     <!-- Hamburger Icon | Hide When Screen Med / Big -->
@@ -25,13 +27,124 @@
         <a href="javascript:void(0)" class="w3-bar-item w3-large w3-button" onclick="toggleNavbar()">☰</a>
     </div>
 
-    <div class="w3-container">
-        <img src="DD.png">
+
+    <!-- Slideshow container -->
+    <div class="slideshow-container w3-card w3-padding">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <video no-controls autoplay muted repeat style="width:100%">
+                <source src="DeadwoodDominanceGameTrailer.mp4" type="video/mp4" alt="slide-1">
+                Your browser does not support the video tag.
+            </video>
+            <div class="text">Your Video Caption</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext w3-center">2 / 4</div>
+            <img src="wizard-main.png" style="max-width:100%; max-height: 60vh;" alt="slide-2">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="img3.jpg" style="width:100%" alt="slide-3">
+            <div class="text">Caption Three</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="img4.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <!--
+    <div class="w3-padding-large" style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div> -->
+
+    <div class="text-container w3-container w3-card" style="height: 20vh;width: 80%; margin: auto">
+
+        <div class="myText fade">
+            <p>Th</p>
+        </div>
+
+        <div class="myText fade">
+            <p>Slide 2</p>
+        </div>
+
     </div>
 
+
+
+    <!-- Footer -->
+    <footer class="w3-theme-dark w3-center w3-bottom w3-padding-16">
+        <div class="w3-container w3-margin" style="">
+            <h3 class="w3-center">Get Connected</h3>
+            <a href="https://www.linkedin.com/in/michael-gentry-2a0ab1220/" target="_blank">
+                <i class="fa fa-linkedin w3-button w3-border w3-large"></i>
+            </a>
+
+            <a href="javascript:void(0);" onclick="openEmailPopup()">
+                <i class="fa fa-envelope w3-button w3-border w3-large"></i>
+            </a>
+        </div>
+    </footer>
+
     <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
 
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            let texts = document.getElementsByClassName("myText")
+
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            for (i = 0; i < texts.length; i++) {
+                texts[i].style.display = "none";
+            }
+
+            texts[slideIndex - 1].style.display = "block";
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        function openEmailPopup() {
+            window.open('mailto:mtgentryy@gmail.com', 'EmailPopup', 'width=600,height=400');
+        }
 
     </script>
 
