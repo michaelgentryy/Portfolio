@@ -33,32 +33,32 @@
 
         <div class="mySlides fade w3-center w3-card w3-padding-large">
             <div class="myNumberText">1 / 4</div>
-            <img src="DD.png">
-            <div class="myCaption">Early Alpha Start Menu for Deadwood Dominance</div>
+            <img src="CMG_Main.png">
+            <div class="myCaption">Early Alpha Image of Casty Magic Guy</div>
         </div>
 
         <div class="mySlides fade w3-center w3-card w3-padding-large">
             <div class="myNumberText">2 / 4</div>
             <video autoplay loop muted playsinline>
-                <source src="AI_Health.mp4" type="video/mp4">
+                <source src="CMG_Staffs.mp4" type="video/mp4">
             </video>
-            <div class="myCaption">AI Health Indicator Video</div>
+            <div class="myCaption">Staff Type Preview Video</div>
         </div>
 
         <div class="mySlides fade w3-center w3-card w3-padding-large">
             <div class="myNumberText">3 / 4</div>
             <video autoplay loop muted playsinline>
-                <source src="AI_Knockback.mp4" type="video/mp4">
+                <source src="CMG_UI.mp4" type="video/mp4">
             </video>
-            <div class="myCaption">AI Knockback Video</div>
+            <div class="myCaption">Staff Casting and UI Video</div>
         </div>
 
         <div class="mySlides fade w3-center w3-card w3-padding-large">
             <div class="myNumberText">4 / 4</div>
             <video autoplay loop muted playsinline>
-                <source src="AI_Knockback_Death.mp4" type="video/mp4">
+                <source src="CMG_Interact.mp4" type="video/mp4">
             </video>
-            <div class="myCaption">AI Knockback to Death State Video</div>
+            <div class="myCaption">Interact System Video</div>
         </div>
 
         <!-- Next and previous buttons -->
@@ -68,45 +68,84 @@
     </div>
 
     <div class="w3-padding textBox">
-        <div class="myText w3-padding w3-card" style="">
+        <div class="myText w3-padding w3-card">
             <div class="w3-center textHeaders" style="font-weight: bold; font-size: 20px">
                 Casty Magic Guy
             </div>
 
             <p>
-                Casty Magic Game is a personal project of mine that doesn't particularly have a working title at the moment.
+                Casty Magic Game is a personal project of mine that doesn't particularly have a working title at the moment. It's really something I'm working on to test and push my own skills further. I've fallen in love with the project and work on it in my free time. Keep in mind that it is still rough around the edges but progress is being made.
             </p>
 
         </div>
 
-        <div class="myText w3-padding w3-card" style="">
+        <div class="myText w3-padding w3-card">
             <div class="w3-center textHeaders" style="font-weight: bold; font-size: 20px">
-                Slide 2 Title
+                Staff Types
             </div>
 
             <p>
-                Slide 2 Information
+                The primary combat weapons are different staff types the player can acquire. Currently, there are 3 types:
+
+                <br>
+                <br>
+
+                Lightning Staff
+                <br>
+                Water Staff
+                <br>
+                Fire Staff
+
+                <br>
+                <br>
+
+                All 3 have a unique basic attack, special attack, and Ground UI. The different types deal mitigated or multiplied damage against different enemy types.
             </p>
         </div>
 
-        <div class="myText w3-padding w3-card" style="">
+        <div class="myText w3-padding w3-card">
             <div class="w3-center textHeaders" style="font-weight: bold; font-size: 20px">
-                Slide 3 Title
+                Casting Cancellation and UI
             </div>
 
             <p>
-                Slide 3 Information
+                One of the bigger challenges that I presented to myself was casting cancellation and the UI. Making sure the player should cast when they want to, can cancel when they don't want to, and can't when they aren't supposed to.
+
+                <br>
+                <br>
+
+                To begin this, I started with being able to cancel the special ability with Left Click. The player can hold Right Click to draw the UI and prepare for casting. You can Left Click to cancel it or release right click to commit and cast it.
+
+                <br>
+                <br>
+
+                Alternatively, if you try to cast outside the casting range, the UI will vanish, and they player will not be able to cast. Releasing Right Click in this instance will cancel the special ability.
+
+                <br>
+                <br>
+
+                To prevent casting issues, a dot product is calculated to make sure the ground is level where the player intends to cast to ensure the player cannot cast on the sides of building or other vertical object that they shouldn't be able to cast on.
+
+                <br>
+                <br>
+
+                Lastly, the player should not be able to cast indoors. If the player walks into a building, the special cast will cancel. Also, as you can tell in the video, the timers and cooldowns reset on the ability cancellation.
             </p>
 
         </div>
 
-        <div class="myText w3-padding w3-card" style="">
+        <div class="myText w3-padding w3-card">
             <div class="w3-center textHeaders" style="font-weight: bold; font-size: 20px">
-                Slide 4 Title
+                Interact System
             </div>
 
             <p>
-                Slide 4 Information
+                One of the last things that I was proud of implementing was the interact system. It's swift and accurate, I can trade as fast as I can hit the interact button with little to no issues.
+
+                <br>
+                <br>
+
+                Aside from that, each actor that is can be interacted with get highlighted and get an image of the interact key above them. The player can hit the interact key and that will fire off a line trace. If the item hit can be interacted with, it's attached to the socket, and the stats get passed off.
             </p>
 
         </div>
