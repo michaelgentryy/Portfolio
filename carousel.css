@@ -1,7 +1,11 @@
-img {
+img,
+video {
     height: 100%;
     width: 95.5%;
+    background-color: black;
 }
+
+.video {}
 
 .mySlides {
     height: 50vh;
@@ -19,7 +23,7 @@ img {
 
 .myCaption {
     color: #f2f2f2;
-    font-size: 15px;
+    font-size: 12px;
     margin: -30px 0px;
     text-align: center;
 }
@@ -46,11 +50,15 @@ img {
 
 .prev:hover,
 .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .textBox {}
 
 .myText {
     margin: auto;
+}
+
+p {
+    font-size: 14px;
 }
