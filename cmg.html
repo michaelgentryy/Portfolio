@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+<head>
+    <title>Deadwood Dominance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="video.css">
+    <link rel="stylesheet" href="carousel.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- Nav Bar | Hide When Screen Size Small -->
+    <div class="w3-bar w3-black w3-wide w3-hide-small">
+        <a class="w3-bar-item w3-left w3-large">Portfolio</a>
+
+        <a class="w3-bar-item w3-button w3-right w3-large" href="index.html">Home</a>
+    </div>
+
+    <!-- Home Icon | Hide When Screen Med / Big -->
+    <div id="hamNavBar" class="w3-bar w3-black w3-hide-large w3-hide-medium">
+        <a href="index.html">
+            <i class="fa fa-home w3-button w3-large w3-right"></i>
+        </a>
+    </div>
+
+    <div class="w3-content w3-display-container w3-padding-large">
+
+        <div class="mySlides fade w3-center w3-card w3-padding-large">
+            <div class="myNumberText">1 / 4</div>
+            <img src="DD.png">
+            <div class="myCaption">Early Alpha Start Menu for Deadwood Dominance</div>
+        </div>
+
+        <div class="mySlides fade w3-center w3-card w3-padding-large">
+            <div class="myNumberText">2 / 4</div>
+            <video autoplay loop muted playsinline>
+                <source src="AI_Health.mp4" type="video/mp4">
+            </video>
+            <div class="myCaption">AI Health Indicator Video</div>
+        </div>
+
+        <div class="mySlides fade w3-center w3-card w3-padding-large">
+            <div class="myNumberText">3 / 4</div>
+            <video autoplay loop muted playsinline>
+                <source src="AI_Knockback.mp4" type="video/mp4">
+            </video>
+            <div class="myCaption">AI Knockback Video</div>
+        </div>
+
+        <div class="mySlides fade w3-center w3-card w3-padding-large">
+            <div class="myNumberText">4 / 4</div>
+            <video autoplay loop muted playsinline>
+                <source src="AI_Knockback_Death.mp4" type="video/mp4">
+            </video>
+            <div class="myCaption">AI Knockback to Death State Video</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="controls prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="controls next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+
+    <div class="w3-padding textBox">
+        <div class="myText w3-padding w3-card" style="">
+            <div class="w3-center textHeaders" style="font-weight: bold; font-size: 20px">
+                Casty Magic Guy
+            </div>
+
+            <p>
+                Casty Magic Game is a personal project of mine that doesn't particularly have a working title at the moment.
+            </p>
+
+        </div>
+
+        <div class="myText w3-padding w3-card" style="">
+            <div class="w3-center textHeaders" style="font-weight: bold; font-size: 20px">
+                Slide 2 Title
+            </div>
+
+            <p>
+                Slide 2 Information
+            </p>
+        </div>
+
+        <div class="myText w3-padding w3-card" style="">
+            <div class="w3-center textHeaders" style="font-weight: bold; font-size: 20px">
+                Slide 3 Title
+            </div>
+
+            <p>
+                Slide 3 Information
+            </p>
+
+        </div>
+
+        <div class="myText w3-padding w3-card" style="">
+            <div class="w3-center textHeaders" style="font-weight: bold; font-size: 20px">
+                Slide 4 Title
+            </div>
+
+            <p>
+                Slide 4 Information
+            </p>
+
+        </div>
+    </div>
+
+    <br>
+
+    <!-- Footer Large -->
+    <footer class="w3-theme-dark w3-center w3-padding-16 w3-show-large w3-hide-medium w3-hide-small" style="bottom: 0; position: absolute; width: 100%">
+        <div class="w3-container w3-margin" style="">
+            <h3 class="w3-center">Get Connected</h3>
+            <a href="https://www.linkedin.com/in/michael-gentry-2a0ab1220/" target="_blank">
+                <i class="fa fa-linkedin w3-button w3-border w3-large"></i>
+            </a>
+
+            <a href="javascript:void(0);" onclick="openEmailPopup()">
+                <i class="fa fa-envelope w3-button w3-border w3-large"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Footer Large -->
+    <footer class="w3-theme-dark w3-center w3-padding-16 w3-hide-large w3-show-medium w3-show-small">
+        <div class="w3-container w3-margin" style="">
+            <h3 class="w3-center">Get Connected</h3>
+            <a href="https://www.linkedin.com/in/michael-gentry-2a0ab1220/" target="_blank">
+                <i class="fa fa-linkedin w3-button w3-border w3-large"></i>
+            </a>
+
+            <a href="javascript:void(0);" onclick="openEmailPopup()">
+                <i class="fa fa-envelope w3-button w3-border w3-large"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let texts = document.getElementsByClassName("myText");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+
+                // Pause all videos
+                let videos = slides[i].getElementsByTagName("video");
+                for (let j = 0; j < videos.length; j++) {
+                    videos[j].pause();
+                }
+            }
+            for (i = 0; i < texts.length; i++) {
+                texts[i].style.display = "none";
+            }
+
+            texts[slideIndex - 1].style.display = "block";
+            slides[slideIndex - 1].style.display = "block";
+
+            // Play video in current slide
+            let videos = slides[slideIndex - 1].getElementsByTagName("video");
+            for (let j = 0; j < videos.length; j++) {
+                videos[j].play();
+            }
+        }
+
+
+        function changeTextBoxWidth() {
+            // Get all elements with class 'mySlides'
+            let imgBoxes = document.querySelectorAll(".mySlides");
+
+            // Get all elements with class 'myText'
+            let textBoxes = document.querySelectorAll(".myText");
+
+            // Loop through 'mySlides' elements
+            imgBoxes.forEach(function(imgBox, index) {
+                // Temporarily make the slide visible
+                let originalDisplay = imgBox.style.display;
+                imgBox.style.display = "block";
+
+                // Get the width of the slide
+                let imgBoxWidth = imgBox.offsetWidth;
+
+                // Hide the slide again
+                imgBox.style.display = originalDisplay;
+
+                // Set the width of the corresponding 'myText' element
+                textBoxes[index].style.width = imgBoxWidth + "px";
+            });
+        }
+
+        window.addEventListener('load', changeTextBoxWidth);
+        window.addEventListener('resize', changeTextBoxWidth);
+
+        // Call the resize on page load *used to fix slide switch resize bug*
+        window.dispatchEvent(new Event('load'));
+
+        // Call the resize event handler once to set the initial width
+        window.dispatchEvent(new Event('resize'));
+
+        function toggleNavBar() {
+            body.style.display = "none";
+        }
+
+        function openEmailPopup() {
+            window.open('mailto:mtgentryy@gmail.com', 'EmailPopup', 'width=600,height=400');
+        }
+
+    </script>
+
+</body>
+
+</html>
