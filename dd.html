@@ -22,9 +22,11 @@
         <a class="w3-bar-item w3-button w3-right w3-large" href="index.html">Home</a>
     </div>
 
-    <!-- Hamburger Icon | Hide When Screen Med / Big -->
+    <!-- Home Icon | Hide When Screen Med / Big -->
     <div id="hamNavBar" class="w3-bar w3-black w3-hide-large w3-hide-medium">
-        <a href="javascript:void(0)" class="w3-bar-item w3-large w3-button" onclick="toggleNavbar()">☰</a>
+        <a href="index.html">
+            <i class="fa fa-home w3-button w3-large w3-right"></i>
+        </a>
     </div>
 
     <div class="w3-content w3-display-container w3-padding-large">
@@ -252,6 +254,10 @@
 
         // Call the resize event handler once to set the initial width
         window.dispatchEvent(new Event('resize'));
+
+        function toggleNavBar() {
+            body.style.display = "none";
+        }
 
         function openEmailPopup() {
             window.open('mailto:mtgentryy@gmail.com', 'EmailPopup', 'width=600,height=400');
