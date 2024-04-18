@@ -51,4 +51,6 @@ img {
 
 .textBox {}
 
-.myText {}
+.myText {
+    margin: auto;
+}
