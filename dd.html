@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 
-<html lang="en" style="height: 100vh; width: 100vw">
+<html lang="en">
 
 <head>
     <title>Deadwood Dominance</title>
@@ -30,15 +30,33 @@
     <div class="w3-content w3-display-container w3-padding-large">
 
         <div class="mySlides fade w3-center w3-card w3-padding-large">
-            <div class="myNumberText">1 / 2</div>
+            <div class="myNumberText">1 / 4</div>
             <img src="DD.png">
             <div class="myCaption">Early Alpha Start Menu for Deadwood Dominance</div>
         </div>
 
         <div class="mySlides fade w3-center w3-card w3-padding-large">
-            <div class="myNumberText">2 / 2</div>
-            <img src="wizard-main.png">
-            <div class="myCaption">Slide 2 Caption</div>
+            <div class="myNumberText">2 / 4</div>
+            <video autoplay loop muted playsinline>
+                <source src="AI_Health.mp4" type="video/mp4">
+            </video>
+            <div class="myCaption">AI Health Indicator Video</div>
+        </div>
+
+        <div class="mySlides fade w3-center w3-card w3-padding-large">
+            <div class="myNumberText">3 / 4</div>
+            <video autoplay loop muted playsinline>
+                <source src="AI_Knockback.mp4" type="video/mp4">
+            </video>
+            <div class="myCaption">AI Knockback Video</div>
+        </div>
+
+        <div class="mySlides fade w3-center w3-card w3-padding-large">
+            <div class="myNumberText">4 / 4</div>
+            <video autoplay loop muted playsinline>
+                <source src="AI_Knockback_Death.mp4" type="video/mp4">
+            </video>
+            <div class="myCaption">AI Knockback to Death State Video</div>
         </div>
 
         <!-- Next and previous buttons -->
@@ -53,16 +71,71 @@
                 Deadwood Dominance
             </div>
 
-            <p>Deadwood Dominance holds a special place in my heart as my first foray into game development. Serving as a key member of the development team, I dedicated myself to enhancing the game's AI, from refining animations to fine-tuning the intricate workings of the state machine, mechanics, and behavior tree. It was quite the adventure, delving into uncharted territory and learning as I went. Through countless iterations and meticulous attention to detail, I'm proud to have contributed to Deadwood Dominance's captivating gameplay that keeps players on their toes at every turn.</p>
+            <p>
+                Jumping into Deadwood Dominance was my first deep dive into the game development world. I was right there in the trenches, working on the AI - adjusting animations, tinkering with the state machine, implementing mechanics, and adding behaviors to the behavior tree. It felt like an adventure, every day was a new learning experience.
+
+                <br>
+                <br>
+
+                The process was filled with countless iterations, a lot of trial and error, and a meticulous attention to detail. But the real thrill was seeing our ideas take shape, creating gameplay that kept players on their toes. Although Deadwood Dominance is still in its alpha stage, the journey has been nothing short of amazing. The sense of accomplishment I feel, knowing that I’ve contributed to the game’s immersive gameplay, is something I hold dear.
+            </p>
 
         </div>
 
         <div class="myText w3-padding w3-card" style="">
             <div class="w3-center textHeaders" style="font-weight: bold; font-size: 20px">
-                Slide 2
+                AI Health Indication
             </div>
 
-            <p>Slide 2 Info</p>
+            <p>
+                In Deadwood Dominance, one of the features I take great pride in is the health indicators for our AI. The solution might seem straightforward now, but initially, we were at a crossroads. Some team members suggested floating health bars above the AI, while others proposed a static health bar for the last hit enemy at the top-center of the screen. Both options, however, fell short. Given the hordes of zombies (AI) in our game, neither approach would allow players to accurately gauge a zombie’s health.
+
+                <br>
+                <br>
+
+                So, what did I do? I got creative. I exported the AI materials and re-colored them three times using Photoshop. As a result, the AI’s mesh changes color based on their health percentage, giving players a clear indication of how close each zombie is to defeat.
+
+                <br>
+                <br>
+
+                What makes me proud isn’t the complexity of the solution, but rather its effectiveness in overcoming a challenge. That’s what game development is all about, isn’t it?
+            </p>
+        </div>
+
+        <div class="myText w3-padding w3-card" style="">
+            <div class="w3-center textHeaders" style="font-weight: bold; font-size: 20px">
+                AI Knockback
+            </div>
+
+            <p>
+                In the development of Deadwood Dominance, one of the most significant mechanics I implemented was the AI knockback ability, also known as impulse. Given the game’s hoard-like zombie setting, it was crucial to equip the player with a defensive mechanism for those moments when they’re swarmed by enemies. It might seem straightforward on the surface, but the inner workings presented quite a challenge.
+
+                <br>
+                <br>
+
+                Initially, I envisioned a ragdoll-like core for this mechanic. However, it quickly became clear that this approach was causing more problems than it was solving. So, it was back to the drawing board for me.
+
+                <br>
+                <br>
+
+                The solution I came up with was the impulse mechanic. Here’s how it works: The impulse performs a multi-sphere trace, checking for the AI Base class. For each AI hit, it checks if it’s already in the array. If it isn’t, it gets added; if it is, it’s ignored. Then, each AI has their behavior aborted to initiate the knockback, which triggers the corresponding animation. To prevent the player from getting stuck in the knocked-back AI, the collision is turned off.
+
+                <br>
+                <br>
+
+                After a duration that’s synced with the animation, the collision is turned back on. The animation then transitions to the standing pose and resumes playing. The behavior tree switches to attack/chase mode, and the array is cleared.
+            </p>
+
+        </div>
+
+        <div class="myText w3-padding w3-card" style="">
+            <div class="w3-center textHeaders" style="font-weight: bold; font-size: 20px">
+                Death States
+            </div>
+
+            <p>
+                Slide 4 Information
+            </p>
 
         </div>
     </div>
@@ -125,6 +198,12 @@
             }
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
+
+                // Pause all videos
+                let videos = slides[i].getElementsByTagName("video");
+                for (let j = 0; j < videos.length; j++) {
+                    videos[j].pause();
+                }
             }
             for (i = 0; i < texts.length; i++) {
                 texts[i].style.display = "none";
@@ -132,23 +211,44 @@
 
             texts[slideIndex - 1].style.display = "block";
             slides[slideIndex - 1].style.display = "block";
+
+            // Play video in current slide
+            let videos = slides[slideIndex - 1].getElementsByTagName("video");
+            for (let j = 0; j < videos.length; j++) {
+                videos[j].play();
+            }
         }
 
+
         function changeTextBoxWidth() {
-            // Get the first element with class 'mySlides'
-            let imgBox = document.querySelector(".mySlides");
-            let imgBoxWidth = imgBox.offsetWidth;
+            // Get all elements with class 'mySlides'
+            let imgBoxes = document.querySelectorAll(".mySlides");
 
             // Get all elements with class 'myText'
             let textBoxes = document.querySelectorAll(".myText");
 
-            // Loop through 'myText' elements and set their width to match 'mySlides'
-            textBoxes.forEach(function(textBox) {
-                textBox.style.width = imgBoxWidth + "px";
+            // Loop through 'mySlides' elements
+            imgBoxes.forEach(function(imgBox, index) {
+                // Temporarily make the slide visible
+                let originalDisplay = imgBox.style.display;
+                imgBox.style.display = "block";
+
+                // Get the width of the slide
+                let imgBoxWidth = imgBox.offsetWidth;
+
+                // Hide the slide again
+                imgBox.style.display = originalDisplay;
+
+                // Set the width of the corresponding 'myText' element
+                textBoxes[index].style.width = imgBoxWidth + "px";
             });
         }
 
+        window.addEventListener('load', changeTextBoxWidth);
         window.addEventListener('resize', changeTextBoxWidth);
+
+        // Call the resize on page load *used to fix slide switch resize bug*
+        window.dispatchEvent(new Event('load'));
 
         // Call the resize event handler once to set the initial width
         window.dispatchEvent(new Event('resize'));
