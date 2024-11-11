@@ -45,7 +45,7 @@
         padding: 32px;
         background-color: rgb(60, 60, 60, .5);
         border-radius: 10px;
-        height: 80vh;
+        height: 90vh;
         width: 80vw;
         max-width: none;
         border: white 2px solid;
@@ -75,7 +75,7 @@
 
     /* ===================== Section 3 ===================== */
     .sectionThreeInfo {
-        padding: 32px;
+        padding: 20px;
         background-color: rgb(60, 60, 60, 0.5);
         border-radius: 10px;
         height: 90vh;
@@ -83,22 +83,26 @@
         border: white 2px solid;
     }
 
+    .sectionThreeInfo h1 {
+        font-size: 25px;
+    }
+
     .sectionThreeInfo h2 {
-        padding: 20px;
+        padding: 10px;
     }
 
     .wrapper {
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        height: 85%;
+        height: 90%;
         gap: 50px;
     }
 
     .projectItem {
         height: 100%;
         width: 30%;
-        padding: 30px;
+        padding: 20px;
         background: #2e2e2e;
         border: #000 2px solid;
         transition: transform .1s;
@@ -172,7 +176,7 @@
 
     .listArea {
         margin: 0 70px;
-        height: 30vh;
+        height: 35vh;
     }
 
     ul {
@@ -193,7 +197,7 @@
     }
 
     .sectionFourInfo {
-        padding: 32px;
+        padding: 25px;
         background-color: rgb(60, 60, 60, .5);
         border-radius: 10px;
         height: 20vh;
