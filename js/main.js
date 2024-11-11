@@ -36,3 +36,32 @@ function showWW() {
 
     window.scrollTo(0, 0);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const observerOptions = {
+        root: null,
+        threshold: 0.6 // Fires when 60% of the element is visible
+    };
+
+    let timeout;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Clear any ongoing adjustments
+                clearTimeout(timeout);
+
+                // Delay the adjustment slightly for smoother interaction
+                timeout = setTimeout(() => {
+                    entry.target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+                }, 100); // Adjust delay as needed
+            }
+        });
+    }, observerOptions);
+
+    const sections = document.querySelectorAll(".section");
+    sections.forEach(section => observer.observe(section));
+});
