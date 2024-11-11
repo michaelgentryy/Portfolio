@@ -1,0 +1,242 @@
+﻿@media (min-width: 768px) and (max-width: 1024px) {
+    button {
+        background-color: rgb(60, 60, 60, .5);
+        color: #fff;
+        border-color: #fff;
+        border-radius: 10px;
+        padding: 10px 30px;
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+}
+
+    @media (min-width: 1440px) and (max-width: 1920px) {
+    button {
+        background: #fff;
+        color: #fff;
+        width: 260px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: .8em;
+        letter-spacing: 0.1em;
+        font-weight: 400;
+        padding: 10px 20px;
+        transition: transform 0.5s, letter-spacing 0.5s;
+        position: relative;
+        margin: 15px; /* Add margin to give space between buttons */
+        cursor: pointer;
+    }
+
+    .left-btn {
+
+    }
+
+    /* Button hover effect */
+    button:hover {
+        transform: scale(1.1); /* Scale instead of affecting layout */
+        letter-spacing: 0.25em;
+        background: var(--clr);
+        color: var(--clr);
+
+        /* Glow effect around button */
+        box-shadow: 0 0 25px var(--clr);
+    }
+
+    button::before {
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background: #27282c;
+    }
+
+    button, span {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Left button */
+    button.left-btn b::before {
+        content: '';
+        position: absolute;
+        top: -78%;
+        left: 80%;
+        width: 10px;
+        height: 4px;
+        background: #27282c;
+        transform: translateX(-50%) skewX(325deg);
+        transition: 0.5s;
+    }
+
+    button.left-btn b::after {
+        content: '';
+        position: absolute;
+        bottom: -78%;
+        right: 80%;
+        width: 10px;
+        height: 4px;
+        background: #27282c;
+        transform: translateX(-50%) skewX(325deg);
+        transition: 0.5s;
+    }
+
+    button.left-btn:hover b::before {
+        width: 20px;
+        left: 20%;
+    }
+
+    button.left-btn:hover b::after {
+        width: 20px;
+        right: 20%;
+    }
+
+    /* Right button */
+    button.right-btn b::before {
+        content: '';
+        position: absolute;
+        top: -78%;
+        right: 80%; /* Mirrored positioning */
+        width: 10px;
+        height: 4px;
+        background: #27282c;
+        transform: translateX(-50%) skewX(325deg);
+        transition: 0.5s;
+    }
+
+    button.right-btn b::after {
+        content: '';
+        position: absolute;
+        bottom: -78%;
+        left: 80%; /* Mirrored positioning */
+        width: 10px;
+        height: 4px;
+        background: #27282c;
+        transform: translateX(-50%) skewX(325deg);
+        transition: 0.5s;
+    }
+
+    button.right-btn:hover b::before {
+        width: 20px;
+        right: 20%; /* Mirrored hover effect */
+    }
+
+    button.right-btn:hover b::after {
+        width: 20px;
+        left: 20%; /* Mirrored hover effect */
+    }
+}
+
+@media (min-width: 1921px) and (max-width: 2560px) {
+    /* Button styles */
+    button {
+        background: #fff;
+        color: #fff;
+        width: 260px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: .8em;
+        letter-spacing: 0.1em;
+        font-weight: 400;
+        padding: 10px 20px;
+        transition: transform 0.5s, letter-spacing 0.5s;
+        position: relative;
+        margin: 15px; /* Add margin to give space between buttons */
+        cursor: pointer;
+    }
+
+    .left-btn {
+
+    }
+
+    /* Button hover effect */
+    button:hover {
+        transform: scale(1.1); /* Scale instead of affecting layout */
+        letter-spacing: 0.25em;
+        background: var(--clr);
+        color: var(--clr);
+
+        /* Glow effect around button */
+        box-shadow: 0 0 25px var(--clr);
+    }
+
+    button::before {
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background: #27282c;
+    }
+
+    button, span {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Left button */
+    button.left-btn b::before {
+        content: '';
+        position: absolute;
+        top: -78%;
+        left: 80%;
+        width: 10px;
+        height: 4px;
+        background: #27282c;
+        transform: translateX(-50%) skewX(325deg);
+        transition: 0.5s;
+    }
+
+    button.left-btn b::after {
+        content: '';
+        position: absolute;
+        bottom: -78%;
+        right: 80%;
+        width: 10px;
+        height: 4px;
+        background: #27282c;
+        transform: translateX(-50%) skewX(325deg);
+        transition: 0.5s;
+    }
+
+    button.left-btn:hover b::before {
+        width: 20px;
+        left: 20%;
+    }
+
+    button.left-btn:hover b::after {
+        width: 20px;
+        right: 20%;
+    }
+
+    /* Right button */
+    button.right-btn b::before {
+        content: '';
+        position: absolute;
+        top: -78%;
+        right: 80%; /* Mirrored positioning */
+        width: 10px;
+        height: 4px;
+        background: #27282c;
+        transform: translateX(-50%) skewX(325deg);
+        transition: 0.5s;
+    }
+
+    button.right-btn b::after {
+        content: '';
+        position: absolute;
+        bottom: -78%;
+        left: 80%; /* Mirrored positioning */
+        width: 10px;
+        height: 4px;
+        background: #27282c;
+        transform: translateX(-50%) skewX(325deg);
+        transition: 0.5s;
+    }
+
+    button.right-btn:hover b::before {
+        width: 20px;
+        right: 20%; /* Mirrored hover effect */
+    }
+
+    button.right-btn:hover b::after {
+        width: 20px;
+        left: 20%; /* Mirrored hover effect */
+    }
+}

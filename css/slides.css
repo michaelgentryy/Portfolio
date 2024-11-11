@@ -1,0 +1,48 @@
+/* ===================== Section 1 ===================== */
+.deadwoodDominance {
+
+}
+
+.ddOneInfo {
+    padding: 32px;
+    background-color: rgb(60, 60, 60, .5);
+    border-radius: 10px;
+    height: 80vh;
+    width: 80vw;
+    max-width: none;
+    border: white 2px solid;
+}
+
+.mediaList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+}
+
+.w3-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.image, video {
+    width: 80%;
+    height: 40vh;
+}
+
+.mediaInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.imageInfo p {
+    width: 75%;
+}
