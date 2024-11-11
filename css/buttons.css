@@ -10,6 +10,18 @@
     }
 }
 
+@media (min-width: 1025px) and (max-width: 1366px) {
+    button {
+        background-color: rgb(60, 60, 60, .5);
+        color: #fff;
+        border-color: #fff;
+        border-radius: 10px;
+        padding: 5px 15px;
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+}
+
     @media (min-width: 1440px) and (max-width: 1920px) {
     button {
         background: #fff;

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31435b81-ec0d-4a26-8a25-06f0c33af087" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/css/768.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/tablet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/2560.css" afterDir="false" />
-    </list>
+    <list default="true" id="31435b81-ec0d-4a26-8a25-06f0c33af087" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,26 +80,11 @@
       <workItem from="1731276900389" duration="2155000" />
       <workItem from="1731279175467" duration="1455000" />
       <workItem from="1731283823050" duration="7681000" />
+      <workItem from="1731316663497" duration="474000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsOperationLog">
-    <option name="operations">
-      <list>
-        <P4MoveRenameOperation>
-          <option name="changeList" value="Changes" />
-          <option name="oldPath" value="$PROJECT_DIR$/css/main.css" />
-          <option name="newPath" value="$PROJECT_DIR$/css/2560.css" />
-        </P4MoveRenameOperation>
-        <P4MoveRenameOperation>
-          <option name="changeList" value="Changes" />
-          <option name="oldPath" value="$PROJECT_DIR$/css/768.css" />
-          <option name="newPath" value="$PROJECT_DIR$/css/tablet.css" />
-        </P4MoveRenameOperation>
-      </list>
-    </option>
   </component>
 </project>

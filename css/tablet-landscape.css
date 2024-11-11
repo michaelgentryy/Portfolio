@@ -1,0 +1,188 @@
+@media (min-width: 1025px) and (max-width: 1366px) {
+    /* ===================== Main ===================== */
+    body {
+        background-color: #090909ff;
+        color: #fff;
+    }
+
+    .openingPage {
+
+    }
+
+    .section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0 auto;
+        max-width: none;
+    }
+
+    /* ===================== Section 1 ===================== */
+    .sectionOneInfo {
+        padding: 20px;
+        background-color: rgb(60, 60, 60, .5);
+        border-radius: 10px;
+        height: 20vh;
+        width: 60vw;
+        max-width: none;
+        border: white 2px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sectionOneInfo h1 {
+        color: white;
+        font-size: 30px;
+        letter-spacing: .2em;
+        /*-webkit-text-stroke: .3px black;*/
+    }
+
+    /* ===================== Section 2 ===================== */
+    .sectionTwoInfo {
+        padding: 20px;
+        background-color: rgb(60, 60, 60, .5);
+        border-radius: 10px;
+        height: 95vh;
+        width: 80vw;
+        max-width: none;
+        border: white 2px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    .profPic {
+        width: 40%;
+        border: 2px #fff solid;
+    }
+
+    .aboutMe {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .aboutMe p {
+        text-align: left;
+    }
+
+    /* ===================== Section 3 ===================== */
+    .sectionThreeInfo {
+        padding: 20px;
+        background-color: rgb(60, 60, 60, 0.5);
+        border-radius: 10px;
+        height: 55vh;
+        width: 90vw;
+        border: white 2px solid;
+    }
+
+    .sectionThreeInfo h1 {
+        font-size: 25px;
+    }
+
+    .sectionThreeInfo h2 {
+        padding: 10px;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 80%;
+        gap: 50px;
+    }
+
+    .projectItem {
+        height: 100%;
+        width: 50%;
+        background: #2e2e2e;
+        border: #000 2px solid;
+        transition: transform .1s;
+    }
+
+    .projectItem h2 {
+        font-size: 18px;
+    }
+
+    .projectItem li {
+        display: none;
+    }
+
+    .w3-display-bottommiddle {
+        width: 100%;
+    }
+
+    .projectImg {
+        height: 250px;
+        width: 200px;
+    }
+
+    .listArea {
+        margin: 0 0px;
+        height: 30vh;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        text-align: left;
+        padding: 10px
+    }
+
+    /* ===================== Footer ===================== */
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .footer h1 {
+        font-size: 20px;
+    }
+
+    .sectionFourInfo {
+        padding: 30px;
+        background-color: rgb(60, 60, 60, .5);
+        border-radius: 10px;
+        height: 15vh;
+        width: 90vw;
+        max-width: none;
+        border: white 2px solid;
+    }
+
+    i {
+        color: #3c3c3c;
+        height: 40px;
+        width: 50px;
+        justify-content: center;
+        align-content: center;
+        margin: 0;
+        display: flex;
+    }
+
+    /* ===================== Transitions ===================== */
+    .fade {
+        transition: opacity 3s ease;
+        opacity: 0;
+    }
+
+    .fade-in {
+        opacity: 1;
+    }
+
+    .fade-out {
+        opacity: 0;
+    }
+}
