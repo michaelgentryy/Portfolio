@@ -36,13 +36,13 @@
 
     .sectionOneInfo h1 {
         color: white;
-        font-size: 16px;
+        font-size: 20px;
         letter-spacing: .2em;
     }
 
     .sectionOneInfo h2 {
         color: white;
-        font-size: 12px;
+        font-size: 14px;
         letter-spacing: .2em;
     }
 
@@ -85,16 +85,16 @@
 
     /* ===================== Section 3 ===================== */
     .sectionThreeInfo {
-        padding: 20px;
+        padding: 10px;
         background-color: rgb(60, 60, 60, 0.5);
         border-radius: 10px;
-        height: 45vh;
+        height: 90vh;
         width: 90vw;
         border: white 2px solid;
     }
 
     .sectionThreeInfo h1 {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .sectionThreeInfo h2 {
@@ -105,14 +105,15 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        height: 75%;
-        gap: 50px;
+        margin: 0;
+        gap: 10px;
+        flex-direction: column;
     }
 
     .projectItem {
         height: 100%;
-        width: 30%;
-        padding: 30px;
+        width: 100%;
+        padding: 10px;
         background: #2e2e2e;
         border: #000 2px solid;
         transition: transform .1s;
@@ -131,13 +132,13 @@
     }
 
     .projectImg {
-        height: 250px;
-        width: 200px;
+        height: 100px;
+        width: 75px;
+        /*display: none;*/
     }
 
     .listArea {
-        margin: 0 0px;
-        height: 30vh;
+        height: 5vh;
     }
 
     ul {
@@ -165,7 +166,7 @@
         padding: 20px;
         background-color: rgb(60, 60, 60, .5);
         border-radius: 10px;
-        height: 10vh;
+        height: 15vh;
         width: 90vw;
         max-width: none;
         border: white 2px solid;

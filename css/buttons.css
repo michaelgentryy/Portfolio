@@ -1,4 +1,16 @@
-﻿@media (min-width: 768px) and (max-width: 1024px) {
+﻿@media (min-width: 360px) and (max-width: 767px) {
+    button {
+        background-color: rgb(60, 60, 60, .5);
+        color: #fff;
+        border-color: #fff;
+        border-radius: 10px;
+        padding: 5px 15px;
+        font-size: 10px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
     button {
         background-color: rgb(60, 60, 60, .5);
         color: #fff;
