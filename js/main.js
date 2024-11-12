@@ -38,30 +38,32 @@ function showWW() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const observerOptions = {
-        root: null,
-        threshold: 0.6 // Fires when 60% of the element is visible
-    };
+    if (window.innerWidth > 1024) { // Check if the screen width is greater than 1024px
+        const observerOptions = {
+            root: null,
+            threshold: 0.6 // Fires when 60% of the element is visible
+        };
 
-    let timeout;
+        let timeout;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Clear any ongoing adjustments
-                clearTimeout(timeout);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Clear any ongoing adjustments
+                    clearTimeout(timeout);
 
-                // Delay the adjustment slightly for smoother interaction
-                timeout = setTimeout(() => {
-                    entry.target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center"
-                    });
-                }, 100); // Adjust delay as needed
-            }
-        });
-    }, observerOptions);
+                    // Delay the adjustment slightly for smoother interaction
+                    timeout = setTimeout(() => {
+                        entry.target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
+                    }, 100); // Adjust delay as needed
+                }
+            });
+        }, observerOptions);
 
-    const sections = document.querySelectorAll(".section");
-    sections.forEach(section => observer.observe(section));
+        const sections = document.querySelectorAll(".section");
+        sections.forEach(section => observer.observe(section));
+    }
 });

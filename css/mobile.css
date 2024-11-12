@@ -98,7 +98,7 @@
     }
 
     .sectionThreeInfo h2 {
-        padding: 10px;
+        padding: 5px;
     }
 
     .wrapper {
@@ -113,7 +113,7 @@
     .projectItem {
         height: 100%;
         width: 100%;
-        padding: 10px;
+        padding: 5px;
         background: #2e2e2e;
         border: #000 2px solid;
         transition: transform .1s;
