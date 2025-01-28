@@ -1,69 +1,181 @@
-const mainPage = document.getElementById("openingPage");
-const ddPage = document.getElementById("deadwoodDominance");
-const wwPage = document.getElementById("whisperWinds");
+document.addEventListener("DOMContentLoaded", function() {
+    const progressBars = document.querySelectorAll(".progress");
 
-showMain();
-function showMain() {
-    mainPage.style.display = "block";
-    ddPage.style.display = "none";
-    wwPage.style.display = "none";
-}
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBar = entry.target;
+                progressBar.style.width = progressBar.getAttribute("data-progress");
+                progressBar.style.animation = `fillProgress 1s forwards`;
+                observer.unobserve(progressBar);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
 
-function returnToMain() {
-    mainPage.style.display = "block";
-    ddPage.style.display = "none";
-    wwPage.style.display = "none";
+    progressBars.forEach(progressBar => {
+        observer.observe(progressBar);
+    });
 
-    window.scrollTo(0, 2550);
-}
+    // Lightbox functionality
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImage = document.getElementById('lightbox-image');
 
-function showDD() {
-    ddPage.style.display = "block";
-    mainPage.style.display = "none";
-    wwPage.style.display = "none";
+    document.querySelectorAll('.carousel-item img').forEach(img => {
+        img.addEventListener('click', function() {
+            lightboxImage.src = this.src;
+            lightboxOverlay.classList.remove('hidden');
+        });
+    });
 
-    showSlides(0);
+    lightboxOverlay.addEventListener('click', function(event) {
+        if (event.target === lightboxOverlay) {
+            lightboxOverlay.classList.add('hidden');
+        }
+    });
 
-    window.scrollTo(0, 0);
-}
+    // Video autoplay functionality
+    const carouselVideos = document.querySelectorAll('.carousel-video');
 
-function showWW() {
-    wwPage.style.display = "block";
-    mainPage.style.display = "none";
-    ddPage.style.display = "none";
+    const videoObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
 
-    showSlides(4);
-
-    window.scrollTo(0, 0);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    if (window.innerWidth > 1024) { // Check if the screen width is greater than 1024px
-        const observerOptions = {
-            root: null,
-            threshold: 0.6 // Fires when 60% of the element is visible
-        };
-
-        let timeout;
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Clear any ongoing adjustments
-                    clearTimeout(timeout);
-
-                    // Delay the adjustment slightly for smoother interaction
-                    timeout = setTimeout(() => {
-                        entry.target.scrollIntoView({
-                            behavior: "smooth",
-                            block: "center"
-                        });
-                    }, 100); // Adjust delay as needed
-                }
-            });
-        }, observerOptions);
-
-        const sections = document.querySelectorAll(".section");
-        sections.forEach(section => observer.observe(section));
-    }
+    carouselVideos.forEach(video => {
+        videoObserver.observe(video);
+    });
 });
+
+// GSAP Animations
+gsap.registerPlugin(ScrollTrigger);
+
+// Animate the header
+gsap.from("header", { 
+    duration: 1, 
+    opacity: 0, 
+    y: -50, 
+    ease: "power2.out" 
+});
+
+// Animate the background image box
+gsap.from(".bg-img-box", { 
+    duration: 1, 
+    opacity: 0, 
+    y: -50 
+});
+
+// Animate the title
+gsap.from(".title", { 
+    duration: 1, 
+    opacity: 0, 
+    y: 50, 
+    delay: 0.5 
+});
+
+// Animate the content sections
+gsap.utils.toArray(".content-section").forEach(section => {
+    gsap.from(section, {
+        scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            end: "bottom 60%",
+            toggleActions: "play none none none"
+        },
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        stagger: 0.3
+    });
+});
+
+// Animate images within sections
+gsap.utils.toArray(".sect-box img").forEach(image => {
+    gsap.from(image, {
+        scrollTrigger: {
+            trigger: image,
+            start: "top 80%",
+            end: "bottom 60%",
+            toggleActions: "play none none none"
+        },
+        duration: 1,
+        scale: 0.8,
+        opacity: 1
+    });
+});
+
+// Show project section
+function showProject(projectId) {
+    const projectSection = document.getElementById(projectId);
+    projectSection.classList.add('project-section', 'fade-in');
+    projectSection.classList.remove('fade-out');
+    document.getElementById("main-content").classList.add("hidden");
+    document.getElementById("main-header").classList.add("hidden");
+    projectSection.classList.remove("hidden");
+    window.scrollTo(0, 0); // Scroll to the top of the page
+}
+
+// Show main content
+function showMainContent() {
+    const projectSections = document.querySelectorAll("main.project-section");
+    projectSections.forEach(section => {
+        section.classList.add('fade-out');
+        section.classList.remove('fade-in');
+        setTimeout(() => {
+            section.classList.add("hidden");
+        }, 500); // Match the animation duration
+    });
+    document.getElementById("main-content").classList.remove("hidden");
+    document.getElementById("main-header").classList.remove("hidden");
+}
+
+// Carousel functionality
+function nextSlide(projectId) {
+    const carouselInner = document.querySelector(`#${projectId} .carousel-inner`);
+    const activeItem = carouselInner.querySelector(".carousel-item.active");
+    let nextItem = activeItem.nextElementSibling;
+    if (!nextItem) {
+        nextItem = carouselInner.firstElementChild;
+    }
+    activeItem.classList.remove("active");
+    nextItem.classList.add("active");
+    updateCarouselTransform(carouselInner);
+    updateDescription(projectId);
+}
+
+function prevSlide(projectId) {
+    const carouselInner = document.querySelector(`#${projectId} .carousel-inner`);
+    const activeItem = carouselInner.querySelector(".carousel-item.active");
+    let prevItem = activeItem.previousElementSibling;
+    if (!prevItem) {
+        prevItem = carouselInner.lastElementChild;
+    }
+    activeItem.classList.remove("active");
+    prevItem.classList.add("active");
+    updateCarouselTransform(carouselInner);
+    updateDescription(projectId);
+}
+
+function updateCarouselTransform(carouselInner) {
+    const activeItem = carouselInner.querySelector(".carousel-item.active");
+    const index = Array.from(carouselInner.children).indexOf(activeItem);
+    carouselInner.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function updateDescription(projectId) {
+    const descriptionItems = document.querySelectorAll(`#${projectId} .description-item`);
+    const activeItem = document.querySelector(`#${projectId} .carousel-inner .carousel-item.active`);
+    const index = Array.from(activeItem.parentElement.children).indexOf(activeItem);
+    descriptionItems.forEach((item, i) => {
+        item.classList.toggle("active", i === index);
+    });
+}
