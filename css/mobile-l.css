@@ -79,11 +79,11 @@ header nav ul li a:hover {
 }
 
 .sect-box h3 {
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 .sect-box p {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 .btn-red {
@@ -202,7 +202,7 @@ Title & Background Image
 
 .bg-img-box .title h2 {
     letter-spacing: .1em;
-    font-size: 2em;
+    font-size: 2.5em;
     margin: 0;
 }
 

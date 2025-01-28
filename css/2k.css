@@ -1,5 +1,4 @@
-/*2505 is max for 2K */
-@media screen and (min-width: 1921px) and (max-width: 2505px) {
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
     /* ===========================
    General Styles
    =========================== */
@@ -207,12 +206,12 @@ Title & Background Image
 
     .bg-img-box .title h2 {
         letter-spacing: .1em;
-        font-size: 2em;
+        font-size: 4em;
         margin: 0;
     }
 
     .bg-img-box .title h4 {
-        font-size: 1.5em;
+        font-size: 3em;
         margin: 0;
     }
 
